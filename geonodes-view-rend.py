@@ -20,12 +20,12 @@ def main(context):
     old_mod = object.modifiers.active
     old_mod.show_render = False
     old_mod.show_viewport = True
-    node_group = old_mod.node_group
     bpy.ops.object.modifier_add(type='NODES')
     mod = object.modifiers.active
+    bpy.ops.object.modifier_move_to_index(modifier=mod.name, index=object.modifiers.find(old_mod.name) + 1)
     mod.show_viewport = False
     mod.show_render = True
-    mod.node_group = node_group
+    mod.node_group = old_mod.node_group
     for name in old_mod.keys():
         if name.endswith("_use_attribute") or name.endswith("_attribute_name"):
             continue
