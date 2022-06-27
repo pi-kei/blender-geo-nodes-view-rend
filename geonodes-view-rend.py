@@ -1,6 +1,6 @@
 bl_info = {
     "name": "GeoNodes Viewport-Render",
-    "description": "Duplicates selected Geometry Nodes midifier and connects inputs via drivers to setup one for viewport and other for render.",
+    "description": "Duplicates selected Geometry Nodes modifier and connects inputs via drivers to setup one for viewport and other for render.",
     "author": "ComputersDontCompost",
     "version": (1, 0),
     "blender": (3, 2, 0), # could work in older versions but not tested
@@ -40,7 +40,7 @@ def main(context):
 
 
 class GeoNodesViewportRender(bpy.types.Operator):
-    """Duplicates selected Geometry Nodes midifier and connects inputs via drivers to setup one for viewport and other for render"""
+    """Duplicates selected Geometry Nodes modifier and connects inputs via drivers to setup one for viewport and other for render"""
     bl_idname = "object.geonodes_view_rend"
     bl_label = "GeoNodes Viewport-Render"
 
